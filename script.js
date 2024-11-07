@@ -11,7 +11,7 @@ document.getElementById("attendanceForm").addEventListener("submit", async (e) =
     };
 
     try {
-        const result = await fetch("YOUR_SCRIPT_URL", {
+        const result = await fetch("https://script.google.com/macros/s/AKfycbwqPl27hhH5V9zg8lS3bKzjo6HIaBy5-uOt7S9CobuMeBsB3lWUD2e8SObryeNq6gFxzw/exec", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
