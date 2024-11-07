@@ -1,20 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Hadir Online</title>
 </head>
 <body>
     <h2>Daftar Hadir Online</h2>
+
+    <!-- Form untuk menambah data kehadiran -->
     <form id="attendanceForm">
-        <label>Nama:</label>
+        <label for="name">Nama:</label>
         <input type="text" id="name" required><br><br>
-        <label>Keterangan:</label>
-        <input type="text" id="status" required><br><br>
+
+        <label for="status">Keterangan:</label>
+        <select id="status" required>
+            <option value="Hadir">Hadir</option>
+            <option value="Tidak Hadir">Tidak Hadir</option>
+            <option value="Terlambat">Terlambat</option>
+        </select><br><br>
+
         <button type="submit">Submit</button>
     </form>
 
+    <!-- Elemen untuk menampilkan pesan respons -->
     <p id="response"></p>
 
+    <!-- Tabel untuk menampilkan data kehadiran -->
+    <h3>Data Kehadiran</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Waktu</th>
+                <th>Keterangan</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="attendanceTable">
+            <!-- Data akan ditampilkan di sini melalui JavaScript -->
+        </tbody>
+    </table>
+
+    <!-- Memanggil JavaScript CRUD -->
     <script src="script.js"></script>
 </body>
 </html>
