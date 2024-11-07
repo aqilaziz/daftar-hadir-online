@@ -25,28 +25,51 @@
     </form>
     <p id="response"></p>
 
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Daftar Hadir</title>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js"></script>
+</head>
+<body>
+    <h2>Form Daftar Hadir</h2>
+    <form id="attendanceForm">
+        <label>Nama:</label>
+        <input type="text" id="name" required><br><br>
+
+        <label>Keterangan:</label>
+        <select id="status" required>
+            <option value="Hadir">Hadir</option>
+            <option value="Tidak Hadir">Tidak Hadir</option>
+            <option value="Terlambat">Terlambat</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <p id="response"></p>
+
     <script>
-     // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+        // Konfigurasi Firebase (ganti dengan konfigurasi proyek Anda)
+        const firebaseConfig = {
+            apiKey: "AIzaSyDWa5USZSBTDZOrc6bKj8PCsn3GleU0Yoo",
+            authDomain: "formulir-baru.firebaseapp.com",
+            projectId: "formulir-baru",
+            storageBucket: "formulir-baru.appspot.com",
+            messagingSenderId: "167901307142",
+            appId: "1:167901307142:web:936ad089888915042d3e87",
+            measurementId: "G-ZSBRMD7DPF",
+            databaseURL: "https://formulir-baru-default-rtdb.firebaseio.com"  // Pastikan databaseURL diisi dengan benar
+        };
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyDWa5USZSBTDZOrc6bKj8PCsn3GleU0Yoo",
-    authDomain: "formulir-baru.firebaseapp.com",
-    projectId: "formulir-baru",
-    storageBucket: "formulir-baru.firebasestorage.app",
-    messagingSenderId: "167901307142",
-    appId: "1:167901307142:web:936ad089888915042d3e87",
-    measurementId: "G-ZSBRMD7DPF"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+        // Inisialisasi Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const analytics = firebase.analytics(app);
+        const database = firebase.database(app);
 
         document.getElementById("attendanceForm").addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -74,5 +97,8 @@
             }
         });
     </script>
+</body>
+</html>
+
 </body>
 </html>
