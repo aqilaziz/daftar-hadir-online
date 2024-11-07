@@ -11,7 +11,7 @@ document.getElementById("attendanceForm").addEventListener("submit", async (e) =
     };
 
     try {
-        const result = await fetch("https://script.google.com/macros/s/AKfycbwqPl27hhH5V9zg8lS3bKzjo6HIaBy5-uOt7S9CobuMeBsB3lWUD2e8SObryeNq6gFxzw/exec", {
+        const result = await fetch("https://script.google.com/macros/s/AKfycbzerM6hshpjkvzGtg9_LfN93smrbRcC1H2Az8hMqe4WJ6fvAPZulLA5-u5j7JFF1i7-8Q/exec", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
