@@ -16,12 +16,14 @@ async function createData() {
 
     try {
         const result = await fetch("https://script.google.com/macros/s/AKfycbxgcTcjSpDw_XFAFELGBL5qyvSzeoGPr5uOWZklmZF5hlYDSeEXcr1LaCjoRF36hWpcsQ/exec", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        });
+    method: "POST",
+    mode: "no-cors",  // Tambahkan mode no-cors
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+});
+
         
         if (result.ok) {
             responseElement.innerText = "Data berhasil disimpan!";
